@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/P5-Make-Your-App-Material-master.iml" filepath="$PROJECT_DIR$/P5-Make-Your-App-Material-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/P5-Make-Your-App-Material.iml" filepath="$PROJECT_DIR$/P5-Make-Your-App-Material.iml" />
       <module fileurl="file://$PROJECT_DIR$/XYZReader/XYZReader.iml" filepath="$PROJECT_DIR$/XYZReader/XYZReader.iml" />
     </modules>
   </component>
