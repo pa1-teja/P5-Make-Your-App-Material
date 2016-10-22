@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionManager xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <transition
+        android:fromScene="@layout/activity_article_list"
+        android:toScene="@layout/activity_article_detail"
+        android:transition="@transition/exit_transition_for_article_list_activity" />
+
+    <transition
+        android:fromScene="@layout/activity_article_detail"
+        android:toScene="@layout/activity_article_list"
+        android:transition="@transition/return_transition_to_list_activity" />
+
+
+</transitionManager>
