@@ -253,18 +253,11 @@
     <style name="Platform.ThemeOverlay.AppCompat.Light"/>
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
 
-        <item name="android:windowExitTransition">
-            @transition/exit_transition_for_article_list_activity
-        </item>
-
-        <item name="android:windowReenterTransition">
-            @transition/reenter_transition_to_article_list_activity
-        </item>
 
         <item name="android:windowContentTransitions">true</item>
 
     </style>
-    <style name="Theme.Bacon.Detail">
+    <style name="Theme.Bacon.Detail" parent="android:Theme.Material.DialogWhenLarge.NoActionBar">
         <item name="android:statusBarColor">@android:color/transparent</item>
 
         <item name="android:windowEnterTransition">

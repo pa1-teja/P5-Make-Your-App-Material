@@ -25,7 +25,7 @@
                     android:layout_height="wrap_content"
                     android:scaleType="centerCrop" />
 
-                <View
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="112dp"
                     android:background="@drawable/photo_background_protection" />

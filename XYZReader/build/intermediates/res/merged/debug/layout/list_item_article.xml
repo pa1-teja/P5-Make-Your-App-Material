@@ -11,14 +11,21 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <!--suppress AndroidLintContentDescription -->
-        <com.example.xyzreader.ui.DynamicHeightNetworkImageView
+        <!--<com.example.xyzreader.ui.DynamicHeightNetworkImageView-->
+            <!--android:id="@+id/thumbnail"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/photo_placeholder" />-->
+
+        <ImageView
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
             android:background="@color/photo_placeholder" />
 
         <TextView

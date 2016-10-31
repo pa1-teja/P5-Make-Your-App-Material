@@ -10,12 +10,16 @@ import android.graphics.Color;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
+import android.transition.Transition;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,6 +32,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
 
 /**
  * A fragment representing a single Article detail screen. This fragment is
@@ -40,6 +47,9 @@ public class ArticleDetailFragment extends Fragment implements
     private static final String TAG = "ArticleDetailFragment";
     private static final float PARALLAX_FACTOR = 1.25f;
 
+    private static final String ARG_ALBUM_IMAGE_POSITION = "arg_album_image_position";
+    private static final String ARG_STARTING_ALBUM_IMAGE_POSITION = "arg_starting_album_image_position";
+    protected ImageView mPhotoView;
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;
@@ -47,13 +57,26 @@ public class ArticleDetailFragment extends Fragment implements
     private ObservableScrollView mScrollView;
     private DrawInsetsFrameLayout mDrawInsetsFrameLayout;
     private ColorDrawable mStatusBarColorDrawable;
+    private int mArticlePositionInList;
+    private int mStartingPosition;
+    private final Callback mImageCallback = new Callback() {
+        @Override
+        public void onSuccess() {
+            startPostponedEnterTransition();
+        }
 
+        @Override
+        public void onError() {
+            startPostponedEnterTransition();
+        }
+    };
     private int mTopInset;
     private View mPhotoContainerView;
-    private ImageView mPhotoView;
     private int mScrollY;
     private boolean mIsCard = false;
     private int mStatusBarFullOpacityBottom;
+    private String imageUrl;
+    private boolean mIsTransitiong;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -62,11 +85,15 @@ public class ArticleDetailFragment extends Fragment implements
     public ArticleDetailFragment() {
     }
 
-    public static ArticleDetailFragment newInstance(long itemId) {
+    public static ArticleDetailFragment newInstance(long itemId, int position, int startingPosition, String imageUrl) {
         Bundle arguments = new Bundle();
+        arguments.putString("image_URL", imageUrl);
         arguments.putLong(ARG_ITEM_ID, itemId);
+        arguments.putInt(ARG_STARTING_ALBUM_IMAGE_POSITION, startingPosition);
+        arguments.putInt(ARG_ALBUM_IMAGE_POSITION, position);
         ArticleDetailFragment fragment = new ArticleDetailFragment();
         fragment.setArguments(arguments);
+
         return fragment;
     }
 
@@ -84,17 +111,10 @@ public class ArticleDetailFragment extends Fragment implements
         }
     }
 
-    private void scheduleStartPostponedTransition(final View view) {
-        view.getViewTreeObserver().addOnPreDrawListener(
-                new ViewTreeObserver.OnPreDrawListener() {
-                    @Override
-                    public boolean onPreDraw() {
-                        view.getViewTreeObserver().removeOnPreDrawListener(this);
-
-                        return false;
-                    }
-                }
-        );
+    private static boolean isViewInBounds(View container, View view) {
+        Rect containerBounds = new Rect();
+        container.getHitRect(containerBounds);
+        return view.getLocalVisibleRect(containerBounds);
     }
 
     @Override
@@ -105,7 +125,12 @@ public class ArticleDetailFragment extends Fragment implements
             mItemId = getArguments().getLong(ARG_ITEM_ID);
         }
 
+
+        mIsTransitiong = savedInstanceState == null && mStartingPosition == mArticlePositionInList;
+        mStartingPosition = getArguments().getInt(ARG_STARTING_ALBUM_IMAGE_POSITION);
+        mArticlePositionInList = getArguments().getInt(ARG_ALBUM_IMAGE_POSITION);
         mIsCard = getResources().getBoolean(R.bool.detail_is_card);
+        imageUrl = getArguments().getString("image_URL");
         mStatusBarFullOpacityBottom = getResources().getDimensionPixelSize(
                 R.dimen.detail_card_top_margin);
         setHasOptionsMenu(true);
@@ -124,6 +149,7 @@ public class ArticleDetailFragment extends Fragment implements
         // fragments because their mIndex is -1 (haven't been added to the activity yet). Thus,
         // we do this in onActivityCreated.
         getLoaderManager().initLoader(0, null, this);
+
     }
 
     @Override
@@ -132,6 +158,7 @@ public class ArticleDetailFragment extends Fragment implements
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
         mDrawInsetsFrameLayout = (DrawInsetsFrameLayout)
                 mRootView.findViewById(R.id.draw_insets_frame_layout);
+
         mDrawInsetsFrameLayout.setOnInsetsCallback(new DrawInsetsFrameLayout.OnInsetsCallback() {
             @Override
             public void onInsetsChanged(Rect insets) {
@@ -139,19 +166,26 @@ public class ArticleDetailFragment extends Fragment implements
             }
         });
 
+        mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
+        mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mPhotoView.setTransitionName((String) ArticleListActivity.articleTitlesArrayList.get(mArticlePositionInList));
+        }
+
         mScrollView = (ObservableScrollView) mRootView.findViewById(R.id.scrollview);
         mScrollView.setCallbacks(new ObservableScrollView.Callbacks() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onScrollChanged() {
                 mScrollY = mScrollView.getScrollY();
                 getActivityCast().onUpButtonFloorChanged(mItemId, ArticleDetailFragment.this);
-                mPhotoContainerView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
+                mPhotoView.setTranslationY((int) (mScrollY - mScrollY / PARALLAX_FACTOR));
                 updateStatusBar();
             }
         });
 
-        mPhotoView = (ImageView) mRootView.findViewById(R.id.photo);
-        mPhotoContainerView = mRootView.findViewById(R.id.photo_container);
 
         mStatusBarColorDrawable = new ColorDrawable(0);
 
@@ -167,6 +201,52 @@ public class ArticleDetailFragment extends Fragment implements
 
         bindViews();
         updateStatusBar();
+
+        RequestCreator requestCreator = Picasso.with(getActivity()).load(imageUrl);
+        RequestCreator imageRequest = Picasso.with(getActivity()).load(imageUrl).fit().centerCrop();
+
+        if (mIsTransitiong) {
+            requestCreator.noFade();
+            imageRequest.noFade();
+            mPhotoView.setAlpha(0f);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    getActivity().getWindow().getSharedElementEnterTransition().addListener(
+                            new Transition.TransitionListener() {
+
+
+                                @Override
+                                public void onTransitionStart(Transition transition) {
+
+                                }
+
+                                @Override
+                                public void onTransitionEnd(Transition transition) {
+                                    mPhotoView.animate().setDuration(1000).alpha(1f);
+                                }
+
+                                @Override
+                                public void onTransitionCancel(Transition transition) {
+
+                                }
+
+                                @Override
+                                public void onTransitionPause(Transition transition) {
+
+                                }
+
+                                @Override
+                                public void onTransitionResume(Transition transition) {
+
+                                }
+
+                            }
+                    );
+                }
+            }
+        }
+        requestCreator.into(mPhotoView, mImageCallback);
+        imageRequest.into(mPhotoView);
         return mRootView;
     }
 
@@ -183,6 +263,31 @@ public class ArticleDetailFragment extends Fragment implements
         }
         mStatusBarColorDrawable.setColor(color);
         mDrawInsetsFrameLayout.setInsetBackground(mStatusBarColorDrawable);
+    }
+
+    private void startPostponedEnterTransition() {
+        if (mArticlePositionInList == mStartingPosition) {
+            mPhotoView.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+                @Override
+                public boolean onPreDraw() {
+                    mPhotoView.getViewTreeObserver().removeOnPreDrawListener(this);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        getActivity().startPostponedEnterTransition();
+                    }
+                    return true;
+                }
+            });
+        }
+
+    }
+
+    @Nullable
+    View getArticleImage() {
+
+        if (isViewInBounds(getActivity().getWindow().getDecorView(), mPhotoView))
+            return mPhotoView;
+
+        return null;
     }
 
     private void bindViews() {

@@ -1744,9 +1744,9 @@
                     "startLine": 253,
                     "startColumn": 4,
                     "startOffset": 18450,
-                    "endLine": 265,
+                    "endLine": 258,
                     "endColumn": 12,
-                    "endOffset": 18880
+                    "endOffset": 18608
                 },
                 "from": {
                     "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\src\\main\\res\\values-v21\\styles.xml",
@@ -1754,41 +1754,41 @@
                         "startLine": 3,
                         "startColumn": 4,
                         "startOffset": 59,
-                        "endLine": 15,
+                        "endLine": 8,
                         "endColumn": 12,
-                        "endOffset": 501
+                        "endOffset": 222
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 266,
+                    "startLine": 259,
                     "startColumn": 4,
-                    "startOffset": 18885,
-                    "endLine": 279,
+                    "startOffset": 18613,
+                    "endLine": 272,
                     "endColumn": 12,
-                    "endOffset": 19343
+                    "endOffset": 19131
                 },
                 "from": {
                     "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\src\\main\\res\\values-v21\\styles.xml",
                     "position": {
-                        "startLine": 18,
+                        "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 511,
-                        "endLine": 31,
+                        "startOffset": 232,
+                        "endLine": 24,
                         "endColumn": 12,
-                        "endOffset": 982
+                        "endOffset": 763
                     }
                 }
             },
             {
                 "to": {
-                    "startLine": 280,
+                    "startLine": 273,
                     "startColumn": 4,
-                    "startOffset": 19348,
-                    "endLine": 282,
+                    "startOffset": 19136,
+                    "endLine": 275,
                     "endColumn": 12,
-                    "endOffset": 19537
+                    "endOffset": 19325
                 },
                 "from": {
                     "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\values-v21\\values-v21.xml",

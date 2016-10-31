@@ -1799,6 +1799,4 @@ int styleable ViewStubCompat_android_id 0
 int styleable ViewStubCompat_android_inflatedId 2
 int styleable ViewStubCompat_android_layout 1
 int transition enter_transition_to_article_detail_activity 0x7f060000
-int transition exit_transition_for_article_list_activity 0x7f060001
-int transition reenter_transition_to_article_list_activity 0x7f060002
-int transition return_transition_to_list_activity 0x7f060003
+int transition return_transition_to_list_activity 0x7f060001
