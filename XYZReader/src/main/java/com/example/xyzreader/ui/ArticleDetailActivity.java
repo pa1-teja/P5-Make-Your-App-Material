@@ -82,7 +82,7 @@ public class ArticleDetailActivity extends ActionBarActivity
                     View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
                             View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
         }
-        mCurrentArticleDetailFragment = new ArticleDetailFragment();
+
         setContentView(R.layout.activity_article_detail);
         postponeEnterTransition();
         setEnterSharedElementCallback(sharedElementCallback);
@@ -234,9 +234,9 @@ public class ArticleDetailActivity extends ActionBarActivity
         @Override
         public void setPrimaryItem(ViewGroup container, int position, Object object) {
             super.setPrimaryItem(container, position, object);
-            ArticleDetailFragment fragment = (ArticleDetailFragment) object;
-            if (fragment != null) {
-                mSelectedItemUpButtonFloor = fragment.getUpButtonFloor();
+            mCurrentArticleDetailFragment = (ArticleDetailFragment) object;
+            if (mCurrentArticleDetailFragment != null) {
+                mSelectedItemUpButtonFloor = mCurrentArticleDetailFragment.getUpButtonFloor();
                 updateUpButtonPosition();
             }
         }

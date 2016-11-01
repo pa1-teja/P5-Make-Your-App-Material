@@ -31,7 +31,6 @@ import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.RequestCreator;
 
 /**
  * A fragment representing a single Article detail screen. This fragment is
@@ -46,7 +45,7 @@ public class ArticleDetailFragment extends Fragment implements
 
     private static final String ARG_ALBUM_IMAGE_POSITION = "arg_album_image_position";
     private static final String ARG_STARTING_ALBUM_IMAGE_POSITION = "arg_starting_album_image_position";
-    protected ImageView mPhotoView;
+    private static ImageView mPhotoView;
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;
@@ -199,12 +198,9 @@ public class ArticleDetailFragment extends Fragment implements
         bindViews();
         updateStatusBar();
 
-        RequestCreator requestCreator = Picasso.with(getActivity()).load(imageUrl);
-        RequestCreator imageRequest = Picasso.with(getActivity()).load(imageUrl).fit().centerCrop();
 
         if (mIsTransitiong) {
-            requestCreator.noFade();
-            imageRequest.noFade();
+
             mPhotoView.setAlpha(0f);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -242,8 +238,7 @@ public class ArticleDetailFragment extends Fragment implements
                 }
             }
         }
-        requestCreator.into(mPhotoView, mImageCallback);
-        imageRequest.into(mPhotoView);
+
         return mRootView;
     }
 
@@ -312,29 +307,9 @@ public class ArticleDetailFragment extends Fragment implements
                             + mCursor.getString(ArticleLoader.Query.AUTHOR)
                             + "</font>"));
             bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY)));
-//            ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
-//                    .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
-//                        @Override
-//                        public void onResponse(ImageLoader.ImageContainer imageContainer, boolean b) {
-//                            Bitmap bitmap = imageContainer.getBitmap();
-//                            if (bitmap != null) {
-//                                Palette p = Palette.generate(bitmap, 12);
-//                                mMutedColor = p.getDarkMutedColor(0xFF333333);
-//                                mPhotoView.setImageBitmap(imageContainer.getBitmap());
-//                                mRootView.findViewById(R.id.meta_bar)
-//                                        .setBackgroundColor(mMutedColor);
-//                                updateStatusBar();
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void onErrorResponse(VolleyError volleyError) {
-//
-//                        }
-//                    });
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                mPhotoView.setTransitionName((String) ArticleListActivity.articleTitlesArrayList.get(mArticlePositionInList));
+                mPhotoView.setTransitionName("image" + mArticlePositionInList);
             }
             Picasso.with(getActivity()).load(mCursor.getString(ArticleLoader.Query.PHOTO_URL)).into(mPhotoView);
 

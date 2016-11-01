@@ -248,7 +248,7 @@ public class ArticleListActivity extends ActionBarActivity implements
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && !mIsArticleDetailActivityStarted) {
                         mIsArticleDetailActivityStarted = true;
                         startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(ArticleListActivity.this,
-                                ViewHolder.thumbnailView, ViewHolder.thumbnailView.getTransitionName()).toBundle());
+                                ViewHolder.thumbnailView, "image" + vh.getAdapterPosition()).toBundle());
                     }
                     else
                         startActivity(intent);
