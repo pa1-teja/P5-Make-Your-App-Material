@@ -3362,8 +3362,9 @@ containing a value of this type.
         public static final int Widget_Design_TextInputLayout=0x7f09016a;
     }
     public static final class transition {
-        public static final int enter_transition_to_article_detail_activity=0x7f060000;
-        public static final int return_transition_to_list_activity=0x7f060001;
+        public static final int enter_transition_for_article_detail_activity=0x7f060000;
+        public static final int return_transition_for_article_list_activity=0x7f060001;
+        public static final int shared_element_transition=0x7f060002;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.

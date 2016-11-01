@@ -1798,5 +1798,6 @@ int[] styleable ViewStubCompat { 0x010100d0, 0x010100f2, 0x010100f3 }
 int styleable ViewStubCompat_android_id 0
 int styleable ViewStubCompat_android_inflatedId 2
 int styleable ViewStubCompat_android_layout 1
-int transition enter_transition_to_article_detail_activity 0x7f060000
-int transition return_transition_to_list_activity 0x7f060001
+int transition enter_transition_for_article_detail_activity 0x7f060000
+int transition return_transition_for_article_list_activity 0x7f060001
+int transition shared_element_transition 0x7f060002

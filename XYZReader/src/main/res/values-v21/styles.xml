@@ -3,6 +3,14 @@
 
     <style name="Theme.Bacon" parent="@style/Theme.AppCompat.Light.NoActionBar">
 
+        <item name="android:windowSharedElementExitTransition">
+            @transition/shared_element_transition
+        </item>
+
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/shared_element_transition
+        </item>
+
 
         <item name="android:windowContentTransitions">true</item>
 
@@ -13,14 +21,22 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
 
         <item name="android:windowEnterTransition">
-            @transition/enter_transition_to_article_detail_activity
+            @transition/enter_transition_for_article_detail_activity
         </item>
-
         <item name="android:windowReturnTransition">
-            @transition/return_transition_to_list_activity
+            @transition/return_transition_for_article_list_activity
         </item>
 
         <item name="android:windowContentTransitions">true</item>
+
+        <item name="android:windowSharedElementEnterTransition">
+            @transition/shared_element_transition
+        </item>
+
+        <item name="android:windowSharedElementExitTransition">
+            @transition/shared_element_transition
+        </item>
+
 
     </style>
 
