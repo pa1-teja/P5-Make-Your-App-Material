@@ -2,6 +2,15 @@
 <transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
     android:duration="500">
 
+    <changeBounds
+        android:duration="5000"
+        android:interpolator="@android:interpolator/linear">
+        <targets
+            android:excludeId="@id/text_content"
+            android:targetId="@id/photo_container" />
+
+    </changeBounds>
+
     <slide
         android:duration="5000"
         android:interpolator="@android:interpolator/overshoot"
