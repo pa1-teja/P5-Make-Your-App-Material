@@ -45,7 +45,7 @@ public class ArticleDetailFragment extends Fragment implements
 
     private static final String ARG_ALBUM_IMAGE_POSITION = "arg_album_image_position";
     private static final String ARG_STARTING_ALBUM_IMAGE_POSITION = "arg_starting_album_image_position";
-    private static ImageView mPhotoView;
+    private ImageView mPhotoView;
     private Cursor mCursor;
     private long mItemId;
     private View mRootView;

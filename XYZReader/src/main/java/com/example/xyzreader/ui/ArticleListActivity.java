@@ -199,9 +199,9 @@ public class ArticleListActivity extends ActionBarActivity implements
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         //        public DynamicHeightNetworkImageView thumbnailView;
-        public static ImageView thumbnailView;
-        public static TextView titleView;
-        public static TextView subtitleView;
+        public ImageView thumbnailView;
+        public TextView titleView;
+        public TextView subtitleView;
 
 
         public ViewHolder(View view) {
@@ -216,7 +216,7 @@ public class ArticleListActivity extends ActionBarActivity implements
     private class Adapter extends RecyclerView.Adapter<ViewHolder> {
         int clickedItemPosition;
         private Cursor mCursor;
-        private ViewHolder holder = new ViewHolder(mRecyclerView);
+
 
         public Adapter(Cursor cursor) {
             mCursor = cursor;
@@ -248,7 +248,7 @@ public class ArticleListActivity extends ActionBarActivity implements
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && !mIsArticleDetailActivityStarted) {
                         mIsArticleDetailActivityStarted = true;
                         startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(ArticleListActivity.this,
-                                ViewHolder.thumbnailView, "image" + vh.getAdapterPosition()).toBundle());
+                                vh.thumbnailView, "image" + vh.getAdapterPosition()).toBundle());
                     }
                     else
                         startActivity(intent);
@@ -261,21 +261,9 @@ public class ArticleListActivity extends ActionBarActivity implements
         @Override
         public void onBindViewHolder(ViewHolder holder, int position) {
             mCursor.moveToPosition(position);
-
-//            holder.thumbnailView.setImageUrl(
-//                    mCursor.getString(ArticleLoader.Query.THUMB_URL),
-//                    ImageLoaderHelper.getInstance(ArticleListActivity.this).getImageLoader());
-//            holder.thumbnailView.setAspectRatio(mCursor.getFloat(ArticleLoader.Query.ASPECT_RATIO));
-//            holder.thumbnailView.setTransitionName((String) articleTitlesArrayList.get(position));
-//            holder.thumbnailView.setTag(articleTitlesArrayList.get(position));
-            bind(position);
-        }
-
-        public void bind(int position) {
-
-            ViewHolder.titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
+            holder.titleView.setText(mCursor.getString(ArticleLoader.Query.TITLE));
             articleTitlesArrayList.add(mCursor.getString(ArticleLoader.Query.TITLE));
-            ViewHolder.subtitleView.setText(
+            holder.subtitleView.setText(
                     DateUtils.getRelativeTimeSpanString(
                             mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),
                             System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
@@ -286,11 +274,12 @@ public class ArticleListActivity extends ActionBarActivity implements
             imageUrl = mCursor.getString(ArticleLoader.Query.THUMB_URL);
             Picasso.with(getBaseContext())
                     .load(mCursor.getString(ArticleLoader.Query.THUMB_URL))
-                    .into(ViewHolder.thumbnailView);
-            ViewHolder.thumbnailView.setTransitionName((String) articleTitlesArrayList.get(position));
-            ViewHolder.thumbnailView.setTag(articleTitlesArrayList.get(position));
+                    .into(holder.thumbnailView);
+            holder.thumbnailView.setTransitionName((String) articleTitlesArrayList.get(position));
+            holder.thumbnailView.setTag(articleTitlesArrayList.get(position));
 
             clickedItemPosition = position;
+
         }
 
         @Override
