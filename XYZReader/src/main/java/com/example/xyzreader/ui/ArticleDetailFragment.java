@@ -18,7 +18,6 @@ import android.support.v4.app.ShareCompat;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
-import android.transition.Transition;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -197,47 +196,6 @@ public class ArticleDetailFragment extends Fragment implements
 
         bindViews();
         updateStatusBar();
-
-
-        if (mIsTransitiong) {
-
-            mPhotoView.setAlpha(0f);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                    getActivity().getWindow().getSharedElementEnterTransition().addListener(
-                            new Transition.TransitionListener() {
-
-
-                                @Override
-                                public void onTransitionStart(Transition transition) {
-
-                                }
-
-                                @Override
-                                public void onTransitionEnd(Transition transition) {
-                                    mPhotoView.animate().setDuration(1000).alpha(1f);
-                                }
-
-                                @Override
-                                public void onTransitionCancel(Transition transition) {
-
-                                }
-
-                                @Override
-                                public void onTransitionPause(Transition transition) {
-
-                                }
-
-                                @Override
-                                public void onTransitionResume(Transition transition) {
-
-                                }
-
-                            }
-                    );
-                }
-            }
-        }
 
         return mRootView;
     }
