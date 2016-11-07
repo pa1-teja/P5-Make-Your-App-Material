@@ -11,14 +11,7 @@
                     "endOffset": 120
                 },
                 "from": {
-                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-land\\values-land.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endColumn": 69,
-                        "endOffset": 120
-                    }
+                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-land\\values-land.xml"
                 }
             },
             {
@@ -30,14 +23,7 @@
                     "endOffset": 184
                 },
                 "from": {
-                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-land\\values-land.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 125,
-                        "endColumn": 63,
-                        "endOffset": 184
-                    }
+                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-land\\values-land.xml"
                 }
             },
             {
@@ -49,14 +35,7 @@
                     "endOffset": 255
                 },
                 "from": {
-                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-land\\values-land.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 189,
-                        "endColumn": 70,
-                        "endOffset": 255
-                    }
+                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-land\\values-land.xml"
                 }
             },
             {
@@ -68,14 +47,7 @@
                     "endOffset": 323
                 },
                 "from": {
-                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-land\\values-land.xml",
-                    "position": {
-                        "startLine": 5,
-                        "startColumn": 4,
-                        "startOffset": 260,
-                        "endColumn": 67,
-                        "endOffset": 323
-                    }
+                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\values-land\\values-land.xml"
                 }
             },
             {
@@ -83,58 +55,12 @@
                     "startLine": 6,
                     "startColumn": 4,
                     "startOffset": 328,
-                    "endColumn": 57,
-                    "endOffset": 381
-                },
-                "from": {
-                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\src\\main\\res\\values-land\\macro_layout.xml",
-                    "position": {
-                        "startLine": 3,
-                        "startColumn": 4,
-                        "startOffset": 88,
-                        "endColumn": 57,
-                        "endOffset": 141
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 7,
-                    "startColumn": 4,
-                    "startOffset": 386,
-                    "endColumn": 51,
-                    "endOffset": 433
-                },
-                "from": {
-                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\src\\main\\res\\values-land\\macro_layout.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 36,
-                        "endColumn": 51,
-                        "endOffset": 83
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 438,
-                    "endLine": 11,
+                    "endLine": 9,
                     "endColumn": 12,
-                    "endOffset": 615
+                    "endOffset": 505
                 },
                 "from": {
-                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\values-land\\values-land.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endLine": 5,
-                        "endColumn": 12,
-                        "endOffset": 232
-                    }
+                    "file": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\values-land\\values-land.xml"
                 }
             }
         ]

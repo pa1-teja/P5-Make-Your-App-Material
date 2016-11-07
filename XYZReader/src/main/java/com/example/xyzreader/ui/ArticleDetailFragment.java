@@ -166,7 +166,8 @@ public class ArticleDetailFragment extends Fragment implements
 
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            mPhotoView.setTransitionName((String) ArticleListActivity.articleTitlesArrayList.get(mArticlePositionInList));
+            mPhotoView.setTransitionName("image" + mArticlePositionInList);
+//            mPhotoView.setTransitionName("image" );
         }
 
         mScrollView = (ObservableScrollView) mRootView.findViewById(R.id.scrollview);
