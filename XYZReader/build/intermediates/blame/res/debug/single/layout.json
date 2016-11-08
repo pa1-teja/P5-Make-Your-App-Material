@@ -28,12 +28,12 @@
         "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_layout_snackbar_include.xml"
-    },
-    {
         "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
         "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
         "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
@@ -88,12 +88,12 @@
         "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_navigation_item.xml"
-    },
-    {
         "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
         "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\layout\\abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\design\\24.2.0\\res\\layout\\design_navigation_item.xml"
     },
     {
         "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",

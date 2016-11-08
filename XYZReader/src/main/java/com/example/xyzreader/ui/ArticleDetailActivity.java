@@ -65,9 +65,9 @@ public class ArticleDetailActivity extends ActionBarActivity
                 } else if (mStartingPosition != mCurrentPosition) {
 
                     names.clear();
-                    names.add(sharedElement.getTransitionName());
+                    names.add("image" + mCurrentPosition);
                     sharedElements.clear();
-                    sharedElements.put(sharedElement.getTransitionName(), sharedElement);
+                    sharedElements.put("image" + mCurrentPosition, sharedElement);
                 }
             }
 

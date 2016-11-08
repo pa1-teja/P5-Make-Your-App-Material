@@ -53,7 +53,6 @@ public class ArticleListActivity extends ActionBarActivity implements
     private RecyclerView mRecyclerView;
     private Bundle bundle;
     private String newTransitionName;
-    private int clickedItemPosition;
     private final SharedElementCallback sharedElementCallback = new SharedElementCallback() {
         @Override
         public void onMapSharedElements(List<String> names, Map<String, View> sharedElements) {
@@ -65,7 +64,7 @@ public class ArticleListActivity extends ActionBarActivity implements
                     // If startingPosition != currentPosition the user must have swiped to a
                     // different page in the DetailsActivity. We must update the shared element
                     // so that the correct one falls into place.
-                    newTransitionName = "image" + clickedItemPosition;
+                    newTransitionName = "image" + currentPosition;
                     View newSharedElement = mRecyclerView.findViewWithTag(newTransitionName);
                     if (newSharedElement != null) {
                         names.clear();
@@ -92,6 +91,7 @@ public class ArticleListActivity extends ActionBarActivity implements
             }
         }
     };
+    private int clickedItemPosition;
     private boolean mIsRefreshing = false;
     private boolean mIsArticleDetailActivityStarted;
     private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
@@ -108,7 +108,7 @@ public class ArticleListActivity extends ActionBarActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
-        setEnterSharedElementCallback(sharedElementCallback);
+        setExitSharedElementCallback(sharedElementCallback);
 
         articleTitlesArrayList = new ArrayList();
 
@@ -200,7 +200,7 @@ public class ArticleListActivity extends ActionBarActivity implements
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        //        public DynamicHeightNetworkImageView thumbnailView;
+        //                public DynamicHeightNetworkImageView thumbnailView;
         public ImageView thumbnailView;
         public TextView titleView;
         public TextView subtitleView;

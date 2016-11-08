@@ -28,7 +28,6 @@ import android.widget.TextView;
 
 import com.example.xyzreader.R;
 import com.example.xyzreader.data.ArticleLoader;
-import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -54,17 +53,6 @@ public class ArticleDetailFragment extends Fragment implements
     private ColorDrawable mStatusBarColorDrawable;
     private int mArticlePositionInList;
     private int mStartingPosition;
-    private final Callback mImageCallback = new Callback() {
-        @Override
-        public void onSuccess() {
-            startPostponedEnterTransition();
-        }
-
-        @Override
-        public void onError() {
-            startPostponedEnterTransition();
-        }
-    };
     private int mTopInset;
     private View mPhotoContainerView;
     private int mScrollY;
