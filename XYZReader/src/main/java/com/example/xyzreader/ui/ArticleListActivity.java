@@ -53,13 +53,14 @@ public class ArticleListActivity extends ActionBarActivity implements
     private RecyclerView mRecyclerView;
     private Bundle bundle;
     private String newTransitionName;
+    private int clickedItemPosition;
     private final SharedElementCallback sharedElementCallback = new SharedElementCallback() {
         @Override
         public void onMapSharedElements(List<String> names, Map<String, View> sharedElements) {
             if (bundle != null) {
                 int startinPosition = bundle.getInt(EXTRA_STARTING_ALBUM_POSITION);
-                int currentPosition = bundle.getInt(EXTRA_CURRENT_ALBUM_POSITION);
-
+//                int currentPosition = bundle.getInt(EXTRA_CURRENT_ALBUM_POSITION);
+                int currentPosition = clickedItemPosition;
                 if (startinPosition != currentPosition) {
                     // If startingPosition != currentPosition the user must have swiped to a
                     // different page in the DetailsActivity. We must update the shared element
@@ -91,7 +92,6 @@ public class ArticleListActivity extends ActionBarActivity implements
             }
         }
     };
-    private int clickedItemPosition;
     private boolean mIsRefreshing = false;
     private boolean mIsArticleDetailActivityStarted;
     private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
@@ -133,6 +133,8 @@ public class ArticleListActivity extends ActionBarActivity implements
         bundle = new Bundle(data.getExtras());
         int startingPosition = bundle.getInt(EXTRA_STARTING_ALBUM_POSITION);
         int currentPosition = bundle.getInt(EXTRA_CURRENT_ALBUM_POSITION);
+
+        clickedItemPosition = currentPosition;
 
         if (startingPosition != currentPosition)
             mRecyclerView.scrollToPosition(currentPosition);

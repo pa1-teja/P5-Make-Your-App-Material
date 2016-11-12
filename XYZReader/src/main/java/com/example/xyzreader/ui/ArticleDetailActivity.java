@@ -65,7 +65,7 @@ public class ArticleDetailActivity extends ActionBarActivity
                 } else if (mStartingPosition != mCurrentPosition) {
 
                     names.clear();
-                    names.add("image" + mCurrentPosition);
+                    names.add("image" + mPagerAdapter.getItemPosition(mPager));
                     sharedElements.clear();
                     sharedElements.put("image" + mCurrentPosition, sharedElement);
                 }

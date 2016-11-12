@@ -17,4 +17,16 @@
             android:excludeId="@id/photo_container"
             android:targetId="@id/article_body" />
     </slide>
+
+    <changeBounds
+        android:duration="@android:integer/config_mediumAnimTime"
+        android:interpolator="@android:interpolator/linear">
+
+        <targets
+            android:excludeId="@id/article_body"
+            android:targetId="@id/photo_container" />
+
+    </changeBounds>
+
+
 </transitionSet>

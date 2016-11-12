@@ -148,12 +148,12 @@
         "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\drawable\\abc_ic_ab_back_material.xml"
     },
     {
-        "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
-        "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\drawable\\abc_btn_radio_material.xml"
-    },
-    {
         "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
         "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.0\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
         "merged": "E:\\Android_Studio\\Android-Studio projects\\P5-Make-Your-App-Material\\XYZReader\\build\\intermediates\\res\\merged\\debug\\drawable\\navigation_empty_icon.xml",
