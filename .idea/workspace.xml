@@ -10,24 +10,9 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="53f6834a-8dd8-451b-a22e-f571dfb0c164" name="Default" comment="SharedElementTransition">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/XYZReader/src/main/res/drawable/detail_view_pager.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/XYZReader/src/main/res/drawable/main_screen_article_list.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/XYZReader/src/main/res/drawable/main_screen_refresh.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XYZReader/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_share.png" afterPath="$PROJECT_DIR$/XYZReader/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_share.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XYZReader/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/XYZReader/build/intermediates/res/resources-debug.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="53f6834a-8dd8-451b-a22e-f571dfb0c164" name="Default" comment="added screenshots">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/XYZReader/src/main/res/drawable/detail_view_pager_share_button.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XYZReader/build/intermediates/blame/res/debug/single/drawable.json" afterPath="$PROJECT_DIR$/XYZReader/build/intermediates/blame/res/debug/single/drawable.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XYZReader/build/intermediates/blame/res/debug/single/layout.json" afterPath="$PROJECT_DIR$/XYZReader/build/intermediates/blame/res/debug/single/layout.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XYZReader/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/XYZReader/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XYZReader/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/XYZReader/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/XYZReader/src/main/java/com/example/xyzreader/ui/ArticleListActivity.java" afterPath="$PROJECT_DIR$/XYZReader/src/main/java/com/example/xyzreader/ui/ArticleListActivity.java" />
     </list>
     <ignored path="P5-Make-Your-App-Material-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,13 +57,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/XYZReader/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="340">
+              <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="detail_view_pager.png" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/XYZReader/src/main/res/drawable/detail_view_pager.png">
+          <provider selected="true" editor-type-id="images">
+            <state />
           </provider>
         </entry>
       </file>
@@ -2316,7 +2308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478936221899</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added screenshots">
+      <created>1481823627861</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1481823627861</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -2409,7 +2408,8 @@
     <MESSAGE value="Shared Element transitions problem." />
     <MESSAGE value="Project 5" />
     <MESSAGE value="SharedElementTransition" />
-    <option name="LAST_COMMIT_MESSAGE" value="SharedElementTransition" />
+    <MESSAGE value="added screenshots" />
+    <option name="LAST_COMMIT_MESSAGE" value="added screenshots" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -2419,7 +2419,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/XYZReader/src/main/java/com/example/xyzreader/ui/ArticleListActivity.java</url>
-          <line>63</line>
+          <line>62</line>
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
@@ -2435,13 +2435,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../Android-SDK/sources/android-24/android/view/ViewGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="364" column="22" selection-start-line="364" selection-start-column="17" selection-end-line="364" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Android-SDK/sources/android-24/android/transition/TransitionManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -2766,10 +2759,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/XYZReader/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="340">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/XYZReader/src/main/res/drawable/detail_view_pager.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>
