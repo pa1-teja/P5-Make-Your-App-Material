@@ -53,14 +53,13 @@ public class ArticleListActivity extends ActionBarActivity implements
     private RecyclerView mRecyclerView;
     private Bundle bundle;
     private String newTransitionName;
-    private int clickedItemPosition;
     private final SharedElementCallback sharedElementCallback = new SharedElementCallback() {
         @Override
         public void onMapSharedElements(List<String> names, Map<String, View> sharedElements) {
             if (bundle != null) {
                 int startinPosition = bundle.getInt(EXTRA_STARTING_ALBUM_POSITION);
-//                int currentPosition = bundle.getInt(EXTRA_CURRENT_ALBUM_POSITION);
-                int currentPosition = clickedItemPosition;
+                int currentPosition = bundle.getInt(EXTRA_CURRENT_ALBUM_POSITION);
+//                int currentPosition = clickedItemPosition;
                 if (startinPosition != currentPosition) {
                     // If startingPosition != currentPosition the user must have swiped to a
                     // different page in the DetailsActivity. We must update the shared element
@@ -92,6 +91,7 @@ public class ArticleListActivity extends ActionBarActivity implements
             }
         }
     };
+    private int clickedItemPosition;
     private boolean mIsRefreshing = false;
     private boolean mIsArticleDetailActivityStarted;
     private BroadcastReceiver mRefreshingReceiver = new BroadcastReceiver() {
@@ -252,7 +252,7 @@ public class ArticleListActivity extends ActionBarActivity implements
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && !mIsArticleDetailActivityStarted) {
                         mIsArticleDetailActivityStarted = true;
                         startActivity(intent, ActivityOptionsCompat.makeSceneTransitionAnimation(ArticleListActivity.this,
-                                vh.thumbnailView, "image" + clickedItemPosition).toBundle());
+                                vh.thumbnailView, vh.thumbnailView.getTransitionName()).toBundle());
 
                     }
                     else
@@ -280,10 +280,9 @@ public class ArticleListActivity extends ActionBarActivity implements
             Picasso.with(getBaseContext())
                     .load(mCursor.getString(ArticleLoader.Query.THUMB_URL))
                     .into(holder.thumbnailView);
-            holder.thumbnailView.setTransitionName("image" + clickedItemPosition);
-            holder.thumbnailView.setTag("image" + clickedItemPosition);
-
-
+            holder.thumbnailView.setTransitionName("image" + position);
+            holder.thumbnailView.setTag("image" + position);
+            clickedItemPosition = position;
         }
 
         @Override
